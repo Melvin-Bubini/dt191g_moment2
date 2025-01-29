@@ -5,8 +5,11 @@ obj/
 .vscode/
 
 appsettings.Development.json
+appsettings.json
 
 wwwroot/lib/
 wwwroot/node_modules/
 publish/
 dist/
+
+.fake
