@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData</title>
+    <link rel="stylesheet" href="~/css/main.css">
+    <link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+@await Html.PartialAsync("_Header")
+
+    <div class="hero-image" style="background: url('https://placehold.co/1920x1200');">
+        <a class="overlay" asp-asp-controller="Home" asp-action="Booking">
+            <div>
+                <h1>BOKA</h1>
+                <p></p>
+            </div>
+        </a>
+
+        <!-- Pil för att skrolla ner -->
+        <a href=".info" class="scroll-down">
+            <i class="fa fa-chevron-down"></i>
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </div>
+
+    <main>
+        @RenderBody()
+    </main>
+
+
+    <footer>
+        <div>
+            <div>
+                <p>&copy; 2025 Melvin Bubini. Alla rättigheter förbehållna.</p>
+            </div>
+    </footer>
+    <script src="~/js/main.js"></script>
+</body>
+
+</html>

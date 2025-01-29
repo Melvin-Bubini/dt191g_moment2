@@ -1,0 +1,12 @@
+
+bin/
+obj/
+
+.vscode/
+
+appsettings.Development.json
+
+wwwroot/lib/
+wwwroot/node_modules/
+publish/
+dist/

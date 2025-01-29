@@ -1,0 +1,30 @@
+<header>
+    <nav class="nav nav-big">
+        <div>
+            <a asp-asp-controller="Home" asp-action="Index"><img src="~/standardLogo.svg" alt="Logo"></a>
+        </div>
+        <ul>
+            <li><a asp-asp-controller="Home" asp-action="Index">STARTSIDA</a></li>
+            <li><a asp-asp-controller="Home" asp-action="Booking">BOKNING</a></li>
+        </ul>
+    </nav>
+
+    <nav class="nav nav-small">
+        <div>
+            <a asp-asp-controller="Home" asp-action="Index"><img src="~/standardLogo.svg" alt="Logo"></a>
+        </div>
+        <button id="menu-toggle" aria-label="Öppna meny">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+
+        <div class="small-menu" id="small-menu">
+            <button id="close-menu" aria-label="Stäng meny">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <ul>
+                <li><a asp-asp-controller="Home" asp-action="Index">STARTSIDA</a></li>
+                <li><a asp-asp-controller="Home" asp-action="Booking">BOKNING</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>

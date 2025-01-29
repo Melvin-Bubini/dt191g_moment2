@@ -1,0 +1,328 @@
+@charset "UTF-8";
+body {
+  font-family: "Raleway", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  color: #212529;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+main {
+  background-color: #f8f9fa;
+  margin: 0 2em;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h1, h2, h3 {
+  font-family: "Lora", serif;
+  font-weight: bold;
+  color: #212529;
+}
+
+/* HERO IMAGE */
+.hero-image {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0%;
+  padding: 0%;
+  text-decoration: none;
+  opacity: 0;
+  /* Börja osynlig */
+  animation: fadeIn 1s ease-in-out forwards;
+  /* Tillämpa animationen */
+}
+
+/* Definiera fade-in animationen */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    /* Gör bilden synlig */
+  }
+}
+.hero-image a {
+  text-decoration: none;
+}
+
+.overlay {
+  background-color: rgba(155, 61, 2, 0.8);
+  border-radius: 5px;
+  padding: 1em;
+  transition: background-color 0.2s ease-in-out;
+  max-width: 40em;
+}
+
+.overlay h1,
+.overlay p {
+  color: white;
+}
+
+.info {
+  padding: 40px 20px;
+  background-color: white;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 8px;
+  text-align: left;
+  box-shadow: 5px -5px 10px 0px black;
+}
+
+.info {
+  margin-bottom: 2em;
+}
+
+.info h2 {
+  font-family: "Lora", serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.text-container {
+  position: relative;
+  max-height: 100px;
+  /* Begränsa höjden på texten */
+  overflow: hidden;
+}
+
+.text-container p {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.fade-out {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #f8f9fa);
+}
+
+.read-more-btn {
+  color: #212529;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.read-more-btn:hover {
+  text-decoration: underline;
+}
+
+.featured-cabins {
+  text-align: center;
+  width: 50%;
+  /* Tar upp 50% av bredden */
+  margin: 0 auto;
+  /* Centrerar sektionen horisontellt */
+  box-shadow: 5px -5px 10px 0px black;
+  margin-bottom: 2em;
+}
+
+
+
+/* NAVIGERING */
+header {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f8f9fa;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+  border-bottom: black solid;
+}
+
+header.scrolled::before {
+  opacity: 0.4;
+  border-bottom: none;
+}
+
+.nav-big {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+}
+
+.nav img {
+  max-height: 50px;
+  height: 50px;
+  width: auto;
+}
+
+.nav-big ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1em;
+}
+
+.nav ul li {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-big ul li a,
+.snabblänkar li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
+.nav-big ul li a:hover,
+.snabblänkar li a:hover {
+  text-decoration: underline;
+}
+
+/* NAVIGERING FÖR SMÅ SKÄRMAR */
+.nav-small {
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 1em;
+}
+
+.nav-small div {
+  display: flex;
+  align-items: center;
+}
+
+#menu-toggle {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #212529;
+}
+
+/* Dold meny */
+.small-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out, right 0.3s ease-in-out;
+  background: #f8f9fa;
+}
+
+.small-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.small-menu ul li {
+  margin: 1em 0;
+}
+
+.small-menu ul li a {
+  text-decoration: none;
+  color: #212529;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.small-menu ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Placera stängknappen i det övre vänstra hörnet av menyn */
+#close-menu {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #212529;
+  cursor: pointer;
+}
+
+/* Synlig meny */
+.small-menu.open {
+  right: 0;
+}
+
+/* Initialt göm menyn */
+.small-menu {
+  right: -100%;
+}
+
+/* Media query */
+@media (max-width: 768px) {
+  .nav-big {
+    display: none;
+    /* Döljer stora menyn */
+  }
+  .nav-small {
+    display: flex;
+    /* Visar lilla menyn */
+  }
+}
+.scroll-down {
+  position: absolute; /* Placera pilarna absolut i förhållande till hero-image */
+  bottom: 20px; /* Avstånd från botten av hero-image */
+  left: 50%; /* Centrerar horisontellt */
+  transform: translateX(-50%); /* Justerar för exakt centering */
+  text-decoration: none;
+  color: black;
+  font-size: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: bounce 2s infinite; /* Lägg till en liten studseffekt */
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0) translateX(-50%);
+  }
+  50% {
+    transform: translateY(10px) translateX(-50%);
+  }
+}
+footer {
+  margin: 0%;
+  padding: 1em 2em;
+  background: #f8f9fa;
+  border-top: solid black;
+}
+
+footer p {
+  margin-bottom: 0%;
+text-align: center;
+}
