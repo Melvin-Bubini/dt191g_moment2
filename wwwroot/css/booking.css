@@ -1,0 +1,38 @@
+/* Specifik styling för Booking-sidan */
+.booking-container {
+    padding: 1em;
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.booking-form {
+    width: 80%;
+    padding: 2em;
+    text-align: left;
+    background-color: beige;
+    box-shadow: 5px 5px 10px 0px black;
+    border-radius: 10px;
+    margin: 2em 0;
+}
+
+.booking-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.booking-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+
+}

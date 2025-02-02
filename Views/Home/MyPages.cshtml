@@ -2,22 +2,31 @@
 
 @{
     ViewData["Title"] = "Mina sidor";
-
-    var bookings = Model;
 }
 
 <div>
     <h1>Mina sidor</h1>
-    
+
 
     <div>
-        <ul>
-            @foreach (var booking in bookings)
-            {
-                <h3>Bokningsnamn: @booking.Name</h3>
-                <h5>Email: @booking.Email</h5>
-                <h5>Datum: @booking.Date</h5>
-            }
-        </ul>
+        <h2>Totalt antal bokningar: @ViewBag.TotalBookings</h2>
+        <h3>Första bokningen är på namn: @ViewData["FirstBooking"]</h3>
+        @if (!Model.Any())
+        {
+            <p>Inga bokningar hittades.</p>
+        }
+        else
+        {
+            <ul>
+                @foreach (var booking in Model)
+                {
+                    <li>
+                        <strong>Namn:</strong> @booking.Name <br>
+                        <strong>Email:</strong> @booking.Email <br>
+                        <strong>Datum:</strong> @booking.Date <br>
+                    </li>
+                }
+            </ul>
+        }
     </div>
 </div>

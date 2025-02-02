@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews(); // Aktiverar MVC
 builder.Services.AddSession(); // Aktiverar session
+builder.Services.AddDistributedMemoryCache();
+
 
 var app = builder.Build();
 

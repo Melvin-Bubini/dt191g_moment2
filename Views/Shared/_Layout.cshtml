@@ -14,20 +14,6 @@
 
 @await Html.PartialAsync("_Header")
 
-    <div class="hero-image" style="background: url('https://placehold.co/1920x1200');">
-        <a class="overlay" asp-asp-controller="Home" asp-action="Booking">
-            <div>
-                <h1>BOKA</h1>
-                <p></p>
-            </div>
-        </a>
-
-        <!-- Pil för att skrolla ner -->
-        <a href=".info" class="scroll-down">
-            <i class="fa fa-chevron-down"></i>
-            <i class="fa fa-chevron-down"></i>
-        </a>
-    </div>
 
     <main>
         @RenderBody()

@@ -4,7 +4,29 @@
     ViewData["Title"] = "Booking";
 }
 
-<div>
-    <h1>bokningssida</h1>
+@await Html.PartialAsync("_HeroImage")
+
+<link rel="stylesheet" href="~/css/booking.css" asp-append-version="true" />
+
+
+
+<div class="booking-container">
     
+    <form asp-action="Create" method="post" class="booking-form" novalidate>
+        <h1>Bokningsformulär</h1>
+        <label for="Name">Namn:</label>
+        <input type="text" asp-for="Name" />
+        <span asp-validation-for="Name"></span> <!-- Valideringsmeddelande -->
+
+        <label for="Email">E-post:</label>
+        <input type="email" asp-for="Email" />
+        <span asp-validation-for="Email"></span> <!-- Valideringsmeddelande -->
+
+        <!-- Kalenderfält -->
+        <label for="Date">Välj datum:</label>
+        <input type="date" asp-for="Date" />
+        <span asp-validation-for="Date"></span> <!-- Valideringsmeddelande -->
+
+        <button type="submit">Boka</button>
+    </form>
 </div>
