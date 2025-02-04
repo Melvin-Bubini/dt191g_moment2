@@ -42,6 +42,9 @@ namespace dt191g_moment2.Controllers
 
             // Spara tillbaka i sessionen i JSON-format
             HttpContext.Session.SetString("Bookings", JsonConvert.SerializeObject(bookings));
+            
+            // Rensa formuläret
+            ModelState.Clear();
 
             // TempData används för att skicka en framgångsmeddelande
             TempData["SuccessMessage"] = "Bokningen har registrerats";
@@ -60,7 +63,7 @@ namespace dt191g_moment2.Controllers
                 : JsonConvert.DeserializeObject<List<Booking>>(sessionBookings) ?? new List<Booking>();
 
             ViewBag.TotalBookings = bookings.Count;
-            ViewData["FirstBooking"] = bookings.FirstOrDefault()?.Name;
+            ViewData["LatestBooking"] = bookings.LastOrDefault()?.Name;
 
             return View(bookings);
         }

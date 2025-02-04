@@ -13,10 +13,11 @@
     width: 80%;
     padding: 2em;
     text-align: left;
-    background-color: beige;
-    box-shadow: 5px 5px 10px 0px black;
+    background-color: #1f1f1f;
+    box-shadow: 5px 5px 10px 0px white;
     border-radius: 10px;
     margin: 2em 0;
+    border: 2px solid white;
 }
 
 .booking-form input {
@@ -24,15 +25,43 @@
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 10px;
-    border: 2px solid black;
+    border: 2px solid rgb(255, 255, 255);
+}
+.booking-form select, .dateInput, .guestsInput {
+    display: block;
+    max-width: 200px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 2px solid rgb(255, 255, 255);
 }
 
 .booking-form button {
-    background-color: #007bff;
+    background-color: rgba(130, 2, 155, 0.8);
     color: white;
     padding: 10px 15px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
 
+}
+
+.errorMessage {
+    color: red;
+    margin-top: 1em;
+    font-weight: bold;
+    display: block;
+}
+
+#successMessage {
+    color: green;
+    margin-top: 1em;
+    font-weight: bold;
+    display: block;
+}
+
+.subBtn {
+    margin-top: 1em;
+    display: block;
+    font-weight: bold;
 }

@@ -4,29 +4,45 @@
     ViewData["Title"] = "Booking";
 }
 
-@await Html.PartialAsync("_HeroImage")
 
 <link rel="stylesheet" href="~/css/booking.css" asp-append-version="true" />
 
 
 
 <div class="booking-container">
-    
     <form asp-action="Create" method="post" class="booking-form" novalidate>
+        <span id="successMessage">
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <p>@TempData["SuccessMessage"]</p>
+            }
+        </span>
         <h1>Bokningsformulär</h1>
+
+        <span asp-validation-for="Name" class="errorMessage"></span> <!-- Valideringsmeddelande -->
         <label for="Name">Namn:</label>
         <input type="text" asp-for="Name" />
-        <span asp-validation-for="Name"></span> <!-- Valideringsmeddelande -->
 
+        <span asp-validation-for="Email" class="errorMessage"></span> <!-- Valideringsmeddelande -->
         <label for="Email">E-post:</label>
         <input type="email" asp-for="Email" />
-        <span asp-validation-for="Email"></span> <!-- Valideringsmeddelande -->
 
         <!-- Kalenderfält -->
+        <span asp-validation-for="Date" class="errorMessage"></span> <!-- Valideringsmeddelande -->
         <label for="Date">Välj datum:</label>
-        <input type="date" asp-for="Date" />
-        <span asp-validation-for="Date"></span> <!-- Valideringsmeddelande -->
+        <input type="date" asp-for="Date" class="dateInput" />
 
-        <button type="submit">Boka</button>
+        <span asp-validation-for="Guests" class="errorMessage"></span>
+        <label for="Guests">Hur många gäster:</label>
+        <input type="number" asp-for="Guests" min="1" max="10" class="guestsInput"/>
+
+        <span asp-validation-for="Payment" class="errorMessage"></span>
+        <label for="Payment">Betalningsplats:</label>
+        <select asp-for="Payment">
+            <option value="På plats">På plats</option>
+            <option value="Online">Online</option>
+        </select>
+
+        <button class="subBtn" type="submit">Boka</button>
     </form>
 </div>
