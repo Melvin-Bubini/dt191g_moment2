@@ -3,20 +3,21 @@
     padding: 1em;
     border-radius: 8px;
     width: 100%;
-    text-align: center;
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
 }
 
 .booking-form {
-    width: 80%;
+    width: 70%;
+    max-width: 800px;
     padding: 2em;
     text-align: left;
     background-color: #1f1f1f;
     box-shadow: 5px 5px 10px 0px white;
     border-radius: 10px;
-    margin: 2em 0;
+    margin: 3em 1em;
     border: 2px solid white;
 }
 
@@ -27,7 +28,10 @@
     border-radius: 10px;
     border: 2px solid rgb(255, 255, 255);
 }
-.booking-form select, .dateInput, .guestsInput {
+
+.booking-form select,
+.dateInput,
+.guestsInput {
     display: block;
     max-width: 200px;
     padding: 10px;
